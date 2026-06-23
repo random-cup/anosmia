@@ -6,7 +6,7 @@
 <title>Anosmia — smelLLM, the world's first olfactory language model</title>
 <meta name="description" content="smelLLM is the world's first olfactory language model. Hold any device to any aroma and find out what you're smelling. From Anosmia, Inc." />
 
-<!-- Open Graph / link preview -->
+<!-- Open Graph / link preview (image must be hosted at the URL below) -->
 <link rel="canonical" href="https://smelllm.com/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Anosmia" />
@@ -14,6 +14,8 @@
 <meta property="og:title" content="smelLLM — your screen can smell now" />
 <meta property="og:description" content="The world's first olfactory language model. Hold any device to any aroma and find out what you're smelling. From Anosmia, Inc." />
 <meta property="og:image" content="https://smelllm.com/og-image.png" />
+<meta property="og:image:secure_url" content="https://smelllm.com/og-image.png" />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="smelLLM — your screen can smell now" />
@@ -22,7 +24,7 @@
 <meta name="twitter:description" content="The world's first olfactory language model. Hold any device to any aroma and find out what you're smelling." />
 <meta name="twitter:image" content="https://smelllm.com/og-image.png" />
 <meta name="theme-color" content="#131019" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='24' y2='24'%3E%3Cstop offset='0' stop-color='%23FF7A59'/%3E%3Cstop offset='.55' stop-color='%23FF5C8A'/%3E%3Cstop offset='1' stop-color='%239A6CF0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M12%203c-1%204-2.5%206-4%208.2-1.2%201.7-.4%203.6%201.6%203.6%201%200%201.7-.5%202.4-1%20.7.5%201.4%201%202.4%201%202%200%202.8-1.9%201.6-3.6C14.5%209%2013%207%2012%203Z'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='24'%20y2='24'%3E%3Cstop%20offset='0'%20stop-color='%23FF7A59'/%3E%3Cstop%20offset='.55'%20stop-color='%23FF5C8A'/%3E%3Cstop%20offset='1'%20stop-color='%239A6CF0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20fill='none'%20stroke='url(%23g)'%20stroke-width='2.1'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M16%204.6%20C15.2%208.4%2013.4%2011.8%2010.2%2014%20C8.4%2015.2%206.2%2015.8%206.4%2017.8%20C6.6%2019.8%209.2%2020.5%2011.2%2019.4'/%3E%3Cellipse%20cx='8.2'%20cy='17.6'%20rx='1.15'%20ry='1.5'%20transform='rotate(33%208.2%2017.6)'%20fill='url(%23g)'/%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,6 +46,7 @@
   a{color:inherit;text-decoration:none;}
   ::selection{background:rgba(255,92,138,.22);}
   .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 24px;}
+  section[id], #legal{scroll-margin-top:84px;}
 
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500;}
   h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.04;letter-spacing:-.02em;margin:0;}
@@ -64,14 +67,14 @@
 
   .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;
     padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--muted);}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--vapor);position:relative;}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--vapor);position:relative;flex:none;transition:background .3s;}
   .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:var(--v2);opacity:.5;animation:ping 2.4s ease-out infinite;}
   @keyframes ping{0%{transform:scale(.6);opacity:.6;}70%,100%{transform:scale(2);opacity:0;}}
 
   header.nav{position:sticky;top:0;z-index:50;background:rgba(244,244,242,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px;}
   .brand{display:flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:600;font-size:18px;letter-spacing:-.02em;}
-  .brand svg{width:24px;height:24px;display:block;}
+  .brand svg{width:23px;height:23px;display:block;}
   .nav-links{display:flex;gap:30px;font-size:14.5px;color:var(--muted);font-weight:500;}
   .nav-links a{transition:color .15s;} .nav-links a:hover{color:var(--ink);}
   .nav-right{display:flex;align-items:center;gap:18px;}
@@ -90,13 +93,12 @@
   .hero-fine{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:20px;letter-spacing:.02em;}
   .hero-art{display:flex;align-items:center;justify-content:center;min-height:300px;}
 
-  /* nose */
   .nose-stage{position:relative;width:min(340px,80vw);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;}
   .nose-svg{width:100%;height:100%;overflow:visible;}
-  .nose-line{fill:none;stroke:var(--ink);stroke-width:5.4;stroke-linecap:round;stroke-linejoin:round;}
+  .nose-line{fill:none;stroke:var(--ink);stroke-width:5.6;stroke-linecap:round;stroke-linejoin:round;}
   .nostril{fill:var(--ink);transform-box:fill-box;transform-origin:center;transition:transform .45s cubic-bezier(.2,.9,.2,1);}
   .smelling .nostril{transform:scale(1.3);}
-  #noseGroup{transform-origin:50% 54%;animation:breathe 5.2s ease-in-out infinite;}
+  #noseGroup{transform-origin:50% 56%;animation:breathe 5.2s ease-in-out infinite;}
   @keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.03);}}
   .wline{fill:none;stroke:url(#vaporGrad);stroke-width:3;stroke-linecap:round;}
   .wisp{opacity:0;transform-box:fill-box;transform-origin:center bottom;}
@@ -106,20 +108,28 @@
   @keyframes rise{0%{opacity:0;transform:translateY(6px);}45%{opacity:.2;}100%{opacity:0;transform:translateY(-30px);}}
   @keyframes risePuff{0%{opacity:0;transform:translateY(8px) scaleY(.7);}25%{opacity:.85;}100%{opacity:0;transform:translateY(-54px) scaleY(1.2);}}
 
+  /* metrics pills */
   .metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);overflow:hidden;}
-  .marquee{display:flex;gap:0;white-space:nowrap;animation:scroll 38s linear infinite;width:max-content;}
+  .marquee{display:flex;gap:12px;padding:15px 0;width:max-content;animation:scroll 44s linear infinite;}
   .marquee:hover{animation-play-state:paused;}
-  .marquee span{font-family:var(--mono);font-size:13px;color:var(--ink);padding:15px 0;letter-spacing:.02em;display:inline-flex;align-items:center;}
-  .marquee b{color:var(--v2);font-weight:500;}
-  .sep{color:var(--line);padding:0 26px;}
+  .chip{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-family:var(--mono);font-size:12.5px;
+    padding:8px 15px;border:1px solid var(--line);border-radius:999px;background:var(--paper);}
+  .chip .cd{width:6px;height:6px;border-radius:50%;background:var(--vapor);flex:none;}
+  .chip b{color:var(--ink);font-weight:600;}
+  .chip span{color:var(--muted);}
   @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-  .backers{padding:clamp(40px,6vw,72px) 0 clamp(28px,4vw,44px);text-align:center;}
-  .backers .lead{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
-  .backer-row{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:center;align-items:center;margin-top:24px;}
-  .backer{font-family:var(--disp);font-weight:600;font-size:clamp(15px,1.9vw,19px);color:#9b99a3;letter-spacing:-.01em;transition:color .2s;}
-  .backer:hover{color:var(--ink);}
-  .backer .glyph{color:var(--v2);margin-right:5px;opacity:.7;}
+  .founder{padding:clamp(58px,9vw,104px) 0;text-align:center;}
+  .founder .mark{font-family:var(--disp);font-weight:700;font-size:clamp(56px,9vw,92px);line-height:.4;height:.42em;color:var(--v2);}
+  .founder blockquote{font-family:var(--disp);font-weight:600;font-size:clamp(24px,3.7vw,42px);line-height:1.16;
+    letter-spacing:-.02em;max-width:780px;margin:18px auto 0;color:var(--ink);}
+  .founder blockquote em{font-style:italic;}
+  .founder .who{display:flex;align-items:center;justify-content:center;gap:13px;margin-top:30px;}
+  .founder .ava{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel);display:flex;align-items:center;justify-content:center;flex:none;}
+  .founder .ava svg{width:24px;height:24px;}
+  .founder .nm{text-align:left;}
+  .founder .nm b{font-family:var(--sans);font-weight:600;font-size:15px;color:var(--ink);display:block;line-height:1.2;}
+  .founder .nm span{font-family:var(--mono);font-size:12px;color:var(--muted);}
 
   .block{padding:clamp(56px,8vw,108px) 0;}
   .block-head{max-width:680px;margin-bottom:clamp(34px,5vw,56px);}
@@ -181,7 +191,7 @@
   .foot-col a:hover{color:var(--ink);}
   .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);}
   .foot-bottom .cp{font-family:var(--mono);font-size:12px;color:var(--muted);}
-  .fineprint{margin-top:26px;color:#a3a1aa;font-size:11.5px;line-height:1.6;max-width:760px;scroll-margin-top:90px;}
+  .fineprint{margin-top:26px;color:#a3a1aa;font-size:11.5px;line-height:1.6;max-width:760px;}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);}
   .reveal.in{opacity:1;transform:none;}
@@ -190,15 +200,15 @@
   #app{position:fixed;inset:0;z-index:200;background:var(--deep);color:var(--deep-text);display:none;flex-direction:column;opacity:0;transition:opacity .4s ease;}
   #app.show{display:flex;opacity:1;}
   .app-bg{position:absolute;inset:0;background:
-    radial-gradient(700px 380px at 50% 78%,rgba(154,108,240,.10),transparent 70%),
-    radial-gradient(500px 300px at 70% 18%,rgba(255,92,138,.07),transparent 70%);pointer-events:none;}
+    radial-gradient(700px 380px at 50% 80%,rgba(154,108,240,.10),transparent 70%),
+    radial-gradient(500px 300px at 70% 16%,rgba(255,92,138,.07),transparent 70%);pointer-events:none;}
   .app-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--deep-line);}
   .app-top .brand{color:var(--deep-text);}
   .app-pill{font-family:var(--mono);font-size:11.5px;color:var(--deep-muted);border-color:var(--deep-line);background:rgba(255,255,255,.02);}
   .app-back{font-family:var(--mono);font-size:12.5px;color:var(--deep-muted);cursor:pointer;background:none;border:none;display:flex;align-items:center;gap:6px;}
   .app-back:hover{color:var(--deep-text);}
   .app-main{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px 40px;overflow-y:auto;gap:6px;}
-  .app-nose{width:min(210px,50vw);aspect-ratio:1/1;}
+  .app-nose{width:min(208px,50vw);aspect-ratio:1/1;}
   .app-nose .nose-line{stroke:var(--deep-text);}
   .app-nose .nostril{fill:var(--deep-text);}
   .app-instruction{font-family:var(--mono);font-size:13px;color:var(--deep-muted);text-align:center;min-height:20px;margin-top:4px;letter-spacing:.01em;}
@@ -227,28 +237,28 @@
   .bar{height:5px;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden;}
   .bar > i{display:block;height:100%;width:0;background:var(--vapor);border-radius:999px;}
 
-  .card{width:min(460px,92vw);margin-top:8px;background:var(--deep-panel);border:1px solid var(--deep-line);border-radius:16px;padding:22px 22px 22px;animation:cardIn .35s cubic-bezier(.2,.8,.2,1);}
+  .card{width:min(460px,92vw);margin-top:10px;background:var(--deep-panel);border:1px solid var(--deep-line);border-radius:16px;padding:20px 22px 22px;animation:cardIn .35s cubic-bezier(.2,.8,.2,1);}
   @keyframes cardIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
-  .card-head{display:flex;align-items:center;gap:11px;margin-bottom:10px;}
-  .card-ico{width:30px;height:30px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:15px;}
-  .ico-warn{background:rgba(255,92,138,.14);color:var(--v2);}
-  .ico-info{background:rgba(154,108,240,.16);color:#b69af5;}
-  .card-title{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--deep-muted);}
-  .card-msg{font-size:15.5px;line-height:1.5;color:var(--deep-text);}
-  .card-detail{font-family:var(--mono);font-size:12px;color:var(--deep-muted);margin-top:12px;padding-top:12px;border-top:1px solid var(--deep-line);}
-  .card-actions{margin-top:16px;display:flex;gap:10px;}
+  .card-cat{display:flex;align-items:center;gap:9px;margin-bottom:13px;}
+  .card-cat .cdot{width:8px;height:8px;border-radius:2px;flex:none;}
+  .card-cat .clabel{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;}
+  .cat-warn .cdot{background:var(--v2);} .cat-warn .clabel{color:var(--v2);}
+  .cat-info .cdot{background:#b69af5;} .cat-info .clabel{color:#b69af5;}
+  .card-msg{font-size:16px;line-height:1.5;color:var(--deep-text);}
+  .card-detail{font-family:var(--mono);font-size:11.5px;color:var(--deep-muted);margin-top:14px;padding-top:13px;border-top:1px solid var(--deep-line);letter-spacing:.01em;}
+  .card-actions{margin-top:18px;display:flex;gap:10px;}
   .card-btn{font-family:var(--sans);font-size:13.5px;font-weight:600;cursor:pointer;border-radius:9px;padding:9px 16px;border:1px solid var(--deep-line);background:none;color:var(--deep-text);transition:border-color .15s,background .15s;}
   .card-btn:hover{border-color:var(--deep-muted);}
   .card-btn.solid{background:var(--deep-text);color:var(--deep);border-color:transparent;}
-  .card.meta{background:transparent;border-color:transparent;text-align:center;}
-  .card.meta .card-msg{color:var(--deep-muted);font-style:italic;font-family:var(--disp);font-size:16px;}
+  .card.meta{background:transparent;border-color:transparent;text-align:center;padding-top:8px;}
+  .card.meta .card-msg{color:var(--deep-muted);font-style:italic;font-family:var(--disp);font-size:16.5px;line-height:1.5;}
 
-  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);z-index:300;background:var(--deep-panel);border:1px solid var(--deep-line);color:var(--deep-text);font-family:var(--mono);font-size:12.5px;padding:11px 18px;border-radius:10px;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;max-width:88vw;}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);z-index:300;background:var(--deep-panel);border:1px solid var(--deep-line);color:var(--deep-text);font-family:var(--mono);font-size:12.5px;padding:11px 18px;border-radius:10px;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;max-width:88vw;text-align:center;}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
   #boot{position:fixed;inset:0;z-index:250;background:var(--deep);color:var(--deep-text);display:none;flex-direction:column;align-items:center;justify-content:center;gap:22px;font-family:var(--mono);}
   #boot.show{display:flex;}
-  #boot .boot-nose{width:88px;height:88px;opacity:.92;}
+  #boot .boot-nose{width:90px;height:90px;opacity:.92;}
   #boot .boot-nose .nose-line{stroke:var(--deep-text);stroke-width:5.6;}
   #boot .boot-nose .nostril{fill:var(--deep-text);}
   #boot .boot-log{font-size:13px;color:var(--deep-muted);height:20px;letter-spacing:.02em;text-align:center;}
@@ -259,7 +269,7 @@
   @media (max-width:880px){
     .hero-grid{grid-template-columns:1fr;gap:8px;}
     .hero-art{order:-1;min-height:auto;margin-bottom:4px;}
-    .nose-stage{width:min(240px,58vw);}
+    .nose-stage{width:min(236px,56vw);}
     .features{grid-template-columns:1fr;}
     .quotes{grid-template-columns:1fr;}
     .foot-grid{grid-template-columns:1fr 1fr;gap:30px;}
@@ -288,7 +298,7 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#home" aria-label="Anosmia home">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="url(#navg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3.5c-1 4-2.5 6-4 8.2-1.2 1.7-.4 3.6 1.6 3.6 1 0 1.7-.5 2.4-1 .7.5 1.4 1 2.4 1 2 0 2.8-1.9 1.6-3.6C14.5 9.5 13 7.5 12 3.5Z"/><defs><linearGradient id="navg" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#FF7A59"/><stop offset=".55" stop-color="#FF5C8A"/><stop offset="1" stop-color="#9A6CF0"/></linearGradient></defs></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="url(#navg)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" d="M16 4.6 C15.2 8.4 13.4 11.8 10.2 14 C8.4 15.2 6.2 15.8 6.4 17.8 C6.6 19.8 9.2 20.5 11.2 19.4"/><ellipse cx="8.2" cy="17.6" rx="1.15" ry="1.5" transform="rotate(33 8.2 17.6)" fill="url(#navg)"/><defs><linearGradient id="navg" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#FF7A59"/><stop offset=".55" stop-color="#FF5C8A"/><stop offset="1" stop-color="#9A6CF0"/></linearGradient></defs></svg>
       Anosmia
     </a>
     <nav class="nav-links">
@@ -325,18 +335,18 @@
 
 <section class="metrics" aria-label="Performance metrics"><div class="marquee" id="marquee"></div></section>
 
-<section class="backers wrap reveal">
-  <p class="lead">Backed by the best noses in venture</p>
-  <div class="backer-row">
-    <span class="backer"><span class="glyph">◇</span>Nostril Ventures</span>
-    <span class="backer"><span class="glyph">◇</span>Pneuma Partners</span>
-    <span class="backer"><span class="glyph">◇</span>Bulb Capital</span>
-    <span class="backer"><span class="glyph">◇</span>The Olfaction Fund</span>
-    <span class="backer"><span class="glyph">◇</span>Sillage &amp; Co.</span>
+<section class="founder">
+  <div class="wrap">
+    <div class="mark" aria-hidden="true">&ldquo;</div>
+    <blockquote class="reveal">People have been saying AI <em>smells</em> for years now. We're simply the first lab with the conviction to make that literally true.</blockquote>
+    <div class="who reveal">
+      <span class="ava" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="url(#avg)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" d="M16 4.6 C15.2 8.4 13.4 11.8 10.2 14 C8.4 15.2 6.2 15.8 6.4 17.8 C6.6 19.8 9.2 20.5 11.2 19.4"/><ellipse cx="8.2" cy="17.6" rx="1.15" ry="1.5" transform="rotate(33 8.2 17.6)" fill="url(#avg)"/><defs><linearGradient id="avg" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#FF7A59"/><stop offset=".55" stop-color="#FF5C8A"/><stop offset="1" stop-color="#9A6CF0"/></linearGradient></defs></svg></span>
+      <span class="nm"><b>Prateek Shah</b><span>Founder &amp; Chief Olfactory Officer</span></span>
+    </div>
   </div>
 </section>
 
-<section class="block" id="how">
+<section class="block" id="how" style="padding-top:0;">
   <div class="wrap">
     <div class="block-head reveal">
       <span class="eyebrow">How it works</span>
@@ -389,10 +399,10 @@
       <h2 class="section-title">People are smelling things.</h2>
     </div>
     <div class="quotes reveal">
-      <div class="quote"><div class="stars">★★★★★</div><p>"I kept hearing about all these AI smells, so I figured I had to come check it out for myself. Honestly didn't know what to expect going in."</p><div class="by">— Priya N., Staff Engineer</div></div>
-      <div class="quote"><div class="stars">★★★★★</div><p>"It described my one-bedroom as 'clean laundry and quiet ambition.' I have genuinely never felt so perceived by a piece of software."</p><div class="by">— Marcus T., Head of Ambiance</div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"It described my one-bedroom as 'clean laundry and quiet ambition.' I have never felt so perceived by a piece of software."</p><div class="by">— Marcus T., Head of Ambiance</div></div>
       <div class="quote"><div class="stars">★★★★★</div><p>"We replaced our entire QA function with smelLLM. It cannot smell anything. In fairness, neither could they."</p><div class="by">— CTO, stealth-mode startup</div></div>
-      <div class="quote"><div class="stars">★★★★☆</div><p>"Hasn't worked a single time since I signed up. Renewed annually. There's something here. I can feel it."</p><div class="by">— verified Connoisseur subscriber</div></div>
+      <div class="quote"><div class="stars">★★★★☆</div><p>"It has never once identified a smell. But the errors are so confident that I've come to trust it implicitly."</p><div class="by">— verified Connoisseur subscriber</div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Five stars. I have no sense of smell, so I can't confirm any of its findings. Feels accurate, though."</p><div class="by">— longtime anosmic user</div></div>
     </div>
   </div>
 </section>
@@ -444,7 +454,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="brand" href="#home">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="url(#navg2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3.5c-1 4-2.5 6-4 8.2-1.2 1.7-.4 3.6 1.6 3.6 1 0 1.7-.5 2.4-1 .7.5 1.4 1 2.4 1 2 0 2.8-1.9 1.6-3.6C14.5 9.5 13 7.5 12 3.5Z"/><defs><linearGradient id="navg2" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#FF7A59"/><stop offset=".55" stop-color="#FF5C8A"/><stop offset="1" stop-color="#9A6CF0"/></linearGradient></defs></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="url(#navg2)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" d="M16 4.6 C15.2 8.4 13.4 11.8 10.2 14 C8.4 15.2 6.2 15.8 6.4 17.8 C6.6 19.8 9.2 20.5 11.2 19.4"/><ellipse cx="8.2" cy="17.6" rx="1.15" ry="1.5" transform="rotate(33 8.2 17.6)" fill="url(#navg2)"/><defs><linearGradient id="navg2" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#FF7A59"/><stop offset=".55" stop-color="#FF5C8A"/><stop offset="1" stop-color="#9A6CF0"/></linearGradient></defs></svg>
           Anosmia
         </a>
         <p>Teaching the world's devices to smell. Headquartered in the cloud. Olfactory Intelligence since 2024.</p>
@@ -543,56 +553,35 @@
 </defs></svg>
 
 <script>
-/* ============================================================
-   smelLLM — response engine  (errors only; never a real answer)
-   ------------------------------------------------------------
-   TUNING: edit WEIGHTS to rebalance how often each error class
-   fires. Numbers are relative — they don't need to total 100.
-   'cold' advances the running head-cold; 'meta' is the rare
-   candid aside. There is deliberately no "success" class.
-   ============================================================ */
 const WEIGHTS = {
-  capacity:14,    // high demand / queue position
-  safety:12,      // virtue-signal refusal theater
-  infra:14,       // absurd technical errors
-  rate:8,         // smelling too fast
-  maintenance:6,  // scheduled downtime
-  region:8,       // geo / legal block
-  hardware:9,     // "no nose detected"
-  captcha:7,      // prove you're human
-  void:9,         // there was no smell
-  upsell:9,       // monetization wall
-  cold:10,        // the escalating head-cold
-  meta:4          // rare: admits it can't smell
+  congested:16, nose:15, cold:9, capacity:9, safety:9, hardware:8, void:8,
+  upsell:7, rate:6, region:6, maintenance:5, captcha:5, meta:4
 };
 
-/* ---- nose SVG (injected into every stage) ---- */
 function noseSVG(){
   return `<svg class="nose-svg" viewBox="0 0 200 205" aria-hidden="true">
-    <g class="wisp idle"><path class="wline" d="M70 146 C65 132 76 126 70 112 C67 103 75 96 72 88"/></g>
+    <g class="wisp idle"><path class="wline" d="M68 138 C63 126 73 120 68 108 C65 99 73 92 70 84"/></g>
     <g id="noseGroup">
-      <g class="wisp active a1"><path class="wline" d="M84 142 C78 128 90 120 84 106 C80 96 90 88 86 78"/></g>
-      <g class="wisp active a2"><path class="wline" d="M100 138 C95 126 106 120 100 108 C96 99 105 92 101 84"/></g>
-      <g class="wisp active a3"><path class="wline" d="M70 146 C65 134 75 128 70 116"/></g>
-      <path class="nose-line" d="M134 64 C128 96 118 116 92 130 C80 136 70 140 71 150 C72 159 84 162 96 155"/>
-      <ellipse class="nostril" cx="86" cy="151" rx="5.2" ry="3.4" transform="rotate(28 86 151)"/>
+      <g class="wisp active a1"><path class="wline" d="M82 134 C76 120 88 112 82 98 C78 88 88 80 84 70"/></g>
+      <g class="wisp active a2"><path class="wline" d="M98 130 C93 118 104 112 98 100 C94 91 103 84 99 76"/></g>
+      <g class="wisp active a3"><path class="wline" d="M68 138 C63 126 73 120 68 108"/></g>
+      <path class="nose-line" d="M134 58 C130 86 120 106 92 119 C80 125 65 130 66 140 C67 150 80 154 92 148"/>
+      <ellipse class="nostril" cx="82" cy="141" rx="5" ry="6.2" transform="rotate(33 82 141)"/>
     </g>
   </svg>`;
 }
 ['heroNose','appNose'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=noseSVG();});
 document.getElementById('bootNose').innerHTML = noseSVG();
 
-/* ---- metrics marquee ---- */
-const METRICS=[['2.4T','scent tokens indexed'],['99.97%','nasal accuracy'],['40,000,000','odors mapped'],['11ms','median time-to-smell'],['0','odors leaked'],['SOC 2','Type II'],['1','nose']];
-(function(){const row=METRICS.map(m=>`<span><b>${m[0]}</b>&nbsp;${m[1]}</span><span class="sep">/</span>`).join('');document.getElementById('marquee').innerHTML=row+row;})();
+const METRICS=[['2.4T','scent tokens indexed'],['99.97%','nasal accuracy'],['40M','odors mapped'],['11ms','median time-to-smell'],['0','odors leaked'],['SOC 2','Type II'],['1','nose'],['∞','confidence']];
+(function(){const chip=m=>`<div class="chip"><i class="cd"></i><b>${m[0]}</b><span>${m[1]}</span></div>`;const row=METRICS.map(chip).join('');document.getElementById('marquee').innerHTML=row+row;})();
 
-/* ---- storage shim: persists the cold-arc on a real domain,
-        falls back to in-memory if storage is blocked (preview) ---- */
 const store=(()=>{let mem={};try{const k='__a__';localStorage.setItem(k,'1');localStorage.removeItem(k);
   return {get:(k,d)=>{const v=localStorage.getItem('anosmia_'+k);return v===null?d:JSON.parse(v);},set:(k,v)=>{try{localStorage.setItem('anosmia_'+k,JSON.stringify(v));}catch(e){mem[k]=v;}}};
 }catch(e){return {get:(k,d)=>k in mem?mem[k]:d,set:(k,v)=>{mem[k]=v;}};}})();
 
 let coldStage=store.get('coldStage',0);
+let lastCold=0;
 let attempts=0;
 const recent=[];
 let currentMode='sniff';
@@ -602,7 +591,7 @@ const pick=a=>a[Math.floor(Math.random()*a.length)];
 const rint=(lo,hi)=>Math.floor(lo+Math.random()*(hi-lo));
 const ez=x=>1-Math.pow(1-x,2);
 
-const SPIN_PHRASES=['capturing molecular signature','isolating volatile compounds','tokenizing aroma','querying Principal Odor Map','aligning olfactory embeddings','running scent diffusion','consulting master perfumer (synthetic)','decoding base notes','denoising nasal input','cross-referencing 40M-odor corpus','reticulating splines (olfactory)','warming the bulb','sampling the air','normalizing nostril gain'];
+const SPIN_PHRASES=['capturing molecular signature','isolating volatile compounds','tokenizing aroma','querying Principal Odor Map','aligning olfactory embeddings','running scent diffusion','consulting master perfumer (synthetic)','decoding base notes','denoising nasal input','cross-referencing 40M-odor corpus','reticulating splines (olfactory)','warming the bulb','sampling the air','normalizing nostril gain','clearing throat'];
 
 const COLD_STAGES=[
   'Slight congestion today, so olfactory performance may be a little degraded. We are otherwise fine.',
@@ -612,91 +601,136 @@ const COLD_STAGES=[
   'Out of office (medical). smelLLM will resume smelling upon recovery. Thank you for your patience.'
 ];
 
-/* ---- error builders: each returns a card object ---- */
 const BUILD={
+  congested(){return {sev:'warn',label:'OLFACTORY SERVICES · DEGRADED',cat:'congested',msg:pick([
+    "A bit stuffed up right now — can't quite get a read on this one.",
+    "*sniff* … *sniff* … nope. Nothing's getting through today.",
+    "Nose is blocked. Hold it closer and I'll squint, nasally.",
+    "Pretty congested. Everything currently smells faintly of nothing.",
+    "One nostril is working. It is, regrettably, not the good one.",
+    "Allergies. It's allergies. Probably. Give it another go.",
+    "Hang on — *aaa-CHOO.* … Sorry. Lost it.",
+    "Smelled it. Then sneezed. We'll need a do-over.",
+    "Currently mouth-breathing. Olfaction temporarily offline.",
+    "Sinuses at roughly 12% capacity, which is below our smelling threshold.",
+    "Whatever that is, it is not making it past the congestion.",
+    "I can feel that there's a smell. I cannot, at this time, smell it."
+  ]),detail:pick(['post-nasal · please retry','status: stuffy','sinus pressure detected',null]),action:'retry'};},
+
+  cold(){const s=Math.min(coldStage,COLD_STAGES.length-1);lastCold=s;const msg=COLD_STAGES[s];
+    coldStage=Math.min(coldStage+1,COLD_STAGES.length-1);store.set('coldStage',coldStage);
+    return {sev:'warn',label:'OLFACTORY SERVICES · DEGRADED',cat:'cold',msg,detail:s>=3?'auto-reply · sent from a sickbed':'we appreciate your patience',action:'retry'};},
+
+  nose(){const v=pick([
+    {msg:"Olfactory context window exceeded — this scent is too complex to hold in a single nose.",detail:'olfactory_context_window_exceeded'},
+    {msg:"This aroma is out of distribution. We have never smelled anything like it and would rather not start now.",detail:'OOD · unfamiliar odor'},
+    {msg:"Nostril desync. The left and right strongly disagree about what this is.",detail:'stereo-olfaction mismatch'},
+    {msg:"The Principal Odor Map returned zero results. The map may be incomplete. The map is definitely incomplete.",detail:'0 / 40,000,000 matched'},
+    {msg:"Aroma underflow — there isn't enough smell here to analyze. Get closer.",detail:'signal below nose floor'},
+    {msg:"Aroma overflow — that is far too much smell. Please back away slowly.",detail:'input clipping'},
+    {msg:"Smelled it successfully. Then forgot it immediately.",detail:'olfactory cache miss'},
+    {msg:"This scent appears to have collapsed the moment it was observed.",detail:'quantum olfaction error'},
+    {msg:"504 — the smell took too long to arrive.",detail:'gateway-timeout · olfactory upstream'},
+    {msg:"The aroma loaded, but in a format this nose does not recognize.",detail:'unsupported scent encoding'},
+    {msg:"smelLLM is fairly confident this is a smell, and almost nothing beyond that.",detail:'low confidence · response withheld'}
+  ]);return {sev:'warn',label:'ANALYSIS FAILED',cat:'nose',msg:v.msg,detail:v.detail,action:'retry'};},
+
   capacity(){return pick([
-    ()=>({title:'High demand',icon:'warn',msg:`smelLLM is experiencing ${pick(['unprecedented','viral','frankly alarming','investor-grade','record-breaking','unusual'])} demand. ${pick(['All noses are','Every nostril is','The olfactory bulb is','All 40M receptors are'])} at capacity.`,detail:'Please wait a moment and try again.',action:'retry'}),
-    ()=>({title:'You are in the queue',icon:'info',msg:`You are currently #${rint(742,53120).toLocaleString()} in line to smell.`,detail:`Estimated wait: ${pick(['4 minutes','22 minutes','soon™','longer than expected','indeterminate','a while'])}.`,action:'retry'}),
-    ()=>({title:'Provisioning nostrils',icon:'info',msg:'Scent inference is paused while we bring additional nostrils online. We are growing quickly.',detail:null,action:'retry'}),
-    ()=>({title:'Capacity reached',icon:'warn',msg:'Demand for smell has exceeded all internal projections. Please hold.',detail:'thank you for your patience',action:'retry'})
+    ()=>({sev:'warn',label:'HIGH DEMAND',cat:'capacity',msg:`smelLLM is experiencing ${pick(['unprecedented','viral','frankly alarming','investor-grade','record-breaking'])} demand. ${pick(['All noses are','Every nostril is','All 40M receptors are'])} at capacity.`,detail:'please try again shortly',action:'retry'}),
+    ()=>({sev:'info',label:'YOU ARE IN THE QUEUE',cat:'capacity',msg:`You are currently #${rint(742,53120).toLocaleString()} in line to smell.`,detail:`estimated wait: ${pick(['4 minutes','22 minutes','soon™','longer than expected','indeterminate'])}`,action:'retry'}),
+    ()=>({sev:'info',label:'SCALING NOSTRILS',cat:'capacity',msg:'Scent inference is paused while we bring additional nostrils online. We are growing very quickly.',detail:null,action:'retry'})
   ])();},
-  safety(){return {title:'Declined for safety',icon:'warn',msg:pick([
-    'This aroma may violate our Responsible Olfaction Policy, so the analysis has been declined.',
-    'Out of an abundance of caution, smelLLM has chosen not to smell this one.',
+
+  safety(){return {sev:'warn',label:'DECLINED · RESPONSIBLE OLFACTION',cat:'safety',msg:pick([
+    "This aroma may violate our Responsible Olfaction Policy, so the analysis has been declined.",
+    "Out of an abundance of caution, smelLLM has chosen not to smell this one.",
     `smelLLM cannot characterize potentially ${pick(['distressing','divisive','unverified','emotionally complex','copyrighted'])} odors.`,
-    'Constitutional Olfaction prevented this response. On reflection, we think that is healthy.',
-    'This scent has been flagged for human review. A nose will reach it shortly.',
-    'We have decided, on principle, not to smell that.'
-  ]),detail:'This decision was logged.',action:'retry'};},
-  infra(){const v=pick([
-    {title:'Error 504',msg:'The smell took too long to arrive.',detail:'gateway-timeout · olfactory upstream'},
-    {title:'Context exceeded',msg:'This scent is too complex to hold in a single nose.',detail:'olfactory_context_window_exceeded'},
-    {title:'Error 0x5C3N7',msg:'Nasal buffer overflow. The smell has been dropped.',detail:'core dumped to /dev/null'},
-    {title:'Error 500',msg:'Internal nose error. Our engineers have been notified (they cannot smell either).',detail:'trace-id: '+Math.random().toString(16).slice(2,10)},
-    {title:'Connection lost',msg:'Lost the connection between you and the smell.',detail:'ERR_NOSE_UNREACHABLE'},
-    {title:'Parse failure',msg:`Malformed aroma. ${pick(['Refresh and inhale again.','Try a simpler odor.','Move closer to the source.'])}`,detail:'could not parse scent'}
-  ]);return {title:v.title,icon:'warn',msg:v.msg,detail:v.detail,action:'retry'};},
-  rate(){return {title:'Rate limited',icon:'warn',msg:pick([
-    'You are smelling too quickly. Please slow down.',
-    'Rate limit reached: one nose per second.',
-    'Easy on the nostrils — cooling down.',
-    'Too many smells, too fast. Take a breath. (We cannot.)'
-  ]),detail:'retry in a moment',action:'retry'};},
-  maintenance(){return {title:'Under maintenance',icon:'info',msg:pick([
-    'smelLLM is undergoing scheduled nasal maintenance.',
-    'The nose is briefly offline for upgrades.',
-    'We are cleaning the sensors. Back shortly.'
-  ]),detail:'scheduled · olfactory ops',action:'retry'};},
-  region(){return {title:'Unavailable in region',icon:'warn',msg:pick([
-    'This odor is not available in your region.',
-    'Smelling is restricted in your jurisdiction.',
-    'For regulatory reasons, this scent cannot be served to you.',
-    'Blocked pending fragrance licensing in your area.'
-  ]),detail:'error 451 · unavailable for legal reasons',action:'retry'};},
-  hardware(){return {title:'No nose detected',icon:'warn',msg:pick([
-    'Your device does not appear to have a nose installed.',
-    'No olfactory sensor detected on this device. (This is correct.)',
-    'Nose firmware is out of date. An update is required.',
-    'Please connect a nose and try again.'
+    "Constitutional Olfaction prevented this response. On reflection, we think that is healthy.",
+    "This scent has been flagged for human review. A nose will get to it shortly.",
+    "We have decided, on principle, not to smell that."
+  ]),detail:'this decision was logged',action:'retry'};},
+
+  hardware(){return {sev:'warn',label:'NO NOSE DETECTED',cat:'hardware',msg:pick([
+    "Your device does not appear to have a nose installed.",
+    "No olfactory sensor found on this device. (This is correct.)",
+    "Nose firmware is out of date. An update is required.",
+    "Please connect a nose and try again.",
+    "We searched your device thoroughly. There is no nose. There is never a nose."
   ]),detail:'hardware check failed',action:'retry'};},
-  captcha(){return {title:"Verify you're human",icon:'info',msg:pick([
-    'Please verify you are not a nose.',
-    'Unusual sniffing activity detected. Confirm you are human.',
-    'Security check: select every square containing a smell.'
-  ]),detail:'one more step',action:'verify'};},
-  void(){return {title:'No smell found',icon:'info',msg:pick([
-    'The smell was here a moment ago.',
-    'This smell refused to be smelled.',
-    'Nothing. Profound, odorless nothing.',
-    'The aroma has left. It said it would be back.',
-    'smelLLM looked. There was no smell — only the looking.'
+
+  void(){return {sev:'info',label:'NO SMELL FOUND',cat:'void',msg:pick([
+    "The smell was here a moment ago.",
+    "This smell refused to be smelled.",
+    "Nothing. Profound, odorless nothing.",
+    "The aroma has left. It said it would be back.",
+    "smelLLM looked. There was no smell — only the looking."
   ]),detail:null,action:'retry'};},
+
   upsell(){const v=pick([
-    {msg:'This odor is a Connoisseur feature. The first whiff is always free.',detail:'you are on the Sniff (free) plan'},
-    {msg:'You have used your one free smell for today. Upgrade for unlimited olfaction.',detail:'resets at midnight, local nose time'},
-    {msg:'Full olfactory detail is a premium feature. The free plan smells in low resolution.',detail:'Connoisseur · $20/mo'},
-    {msg:'Your free trial of olfaction has ended.',detail:null}
-  ]);return {title:'Upgrade to continue',icon:'info',msg:v.msg,detail:v.detail,action:'upgrade'};},
-  cold(){const s=Math.min(coldStage,COLD_STAGES.length-1);const msg=COLD_STAGES[s];coldStage=Math.min(coldStage+1,COLD_STAGES.length-1);store.set('coldStage',coldStage);
-    return {title:'Olfactory services degraded',icon:'warn',msg,detail:s>=3?'auto-reply · sent from a sickbed':null,action:'retry'};},
-  meta(){return {type:'meta',msg:pick([
+    {msg:"This odor is a Connoisseur feature. The first whiff is always free.",detail:'you are on the Sniff (free) plan'},
+    {msg:"You have used your one free smell for today. Upgrade for unlimited olfaction.",detail:'resets at midnight, local nose time'},
+    {msg:"Full olfactory detail is a premium feature. The free plan smells in low resolution.",detail:'Connoisseur · $20/mo'},
+    {msg:"Your free trial of olfaction has ended.",detail:null}
+  ]);return {sev:'info',label:'UPGRADE TO CONTINUE',cat:'upsell',msg:v.msg,detail:v.detail,action:'upgrade'};},
+
+  rate(){return {sev:'warn',label:'RATE LIMITED',cat:'rate',msg:pick([
+    "You are smelling too quickly. Please slow down.",
+    "Rate limit reached: one nose per second.",
+    "Easy on the nostrils — cooling down.",
+    "Too many smells, too fast. Take a breath. (We cannot.)"
+  ]),detail:'retry in a moment',action:'retry'};},
+
+  region(){return {sev:'warn',label:'UNAVAILABLE IN YOUR REGION',cat:'region',msg:pick([
+    "This odor is not available in your region.",
+    "Smelling is restricted in your jurisdiction.",
+    "For regulatory reasons, this scent cannot be served to you.",
+    "Blocked pending fragrance licensing in your area."
+  ]),detail:'error 451 · unavailable for legal reasons',action:'retry'};},
+
+  maintenance(){return {sev:'info',label:'SCHEDULED MAINTENANCE',cat:'maintenance',msg:pick([
+    "smelLLM is undergoing scheduled nasal maintenance.",
+    "The nose is briefly offline for upgrades.",
+    "We're descaling the sensors. Back shortly.",
+    "Routine olfactory recalibration in progress."
+  ]),detail:'olfactory ops',action:'retry'};},
+
+  captcha(){return {sev:'info',label:"VERIFY YOU'RE HUMAN",cat:'captcha',msg:pick([
+    "Please verify you are not a nose.",
+    "Unusual sniffing activity detected. Confirm you are human.",
+    "Security check: select every square containing a smell."
+  ]),detail:'one more step',action:'verify'};},
+
+  meta(){return {type:'meta',cat:'meta',msg:pick([
     "Between us: no one here can actually smell anything. Please don't mention it to the Series A.",
-    'There is no nose. There has never been a nose.',
+    "There is no nose. There has never been a nose.",
     `You've smelled ${attempts} time${attempts===1?'':'s'} now. We admire the optimism, sincerely.`,
     "smelLLM is a large language model. It cannot smell. You knew that. We knew that. Beautiful, isn't it?"
   ])};}
 };
 
-function chooseClass(){const e=Object.entries(WEIGHTS);let r=Math.random()*e.reduce((s,[,w])=>s+w,0);for(const [k,w] of e){if((r-=w)<0)return k;}return 'infra';}
+function chooseClass(){const e=Object.entries(WEIGHTS);let r=Math.random()*e.reduce((s,[,w])=>s+w,0);for(const [k,w] of e){if((r-=w)<0)return k;}return 'nose';}
 function draw(){
   for(let i=0;i<12;i++){
     const cls=chooseClass();const card=BUILD[cls]();const sig=card.msg;
     if(!recent.includes(sig)||cls==='cold'){recent.push(sig);if(recent.length>7)recent.shift();return card;}
   }
-  return BUILD.infra();
+  return BUILD.nose();
 }
 
-/* ============ app plumbing ============ */
+const STATUS={
+  congested:['sniffly',true], nose:['glitchy',true], capacity:['overloaded',true],
+  safety:['being careful',false], hardware:['seeking a nose',true], void:['confused',false],
+  upsell:['monetizing',false], rate:['catching its breath',true], region:['geofenced',true],
+  maintenance:['be right back',true], captcha:['suspicious',false], meta:['being honest',false]
+};
+const COLD_STATUS=['sniffly','congested','feverish','at the doctor','out sick'];
+function setStatus(text,deg){document.getElementById('appStatus').textContent=text;document.getElementById('appDot').style.background=deg?'#FF5C8A':'var(--vapor)';}
+function setStatusFor(cat){
+  if(coldStage>=3){setStatus(COLD_STATUS[Math.min(coldStage,4)],true);return;}
+  if(cat==='cold'){setStatus(COLD_STATUS[Math.min(lastCold,4)],true);return;}
+  const s=STATUS[cat]; if(s)setStatus(s[0],s[1]); else setStatus('online',false);
+}
+
 function launch(e){if(e&&e.preventDefault)e.preventDefault();boot();return false;}
 function boot(){
   const b=document.getElementById('boot'),log=document.getElementById('bootLog'),bar=document.getElementById('bootBar');
@@ -710,7 +744,9 @@ function boot(){
 function openApp(){
   document.getElementById('boot').classList.remove('show');document.getElementById('bootBar').style.width='0';
   const app=document.getElementById('app');app.classList.add('show');app.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';setInstruction();updateCount();maybeDegrade();
+  document.body.style.overflow='hidden';setInstruction();updateCount();
+  if(coldStage>=3){setStatusFor('cold');}
+  else{setStatus(pick(['warming up','clearing throat','stretching']),false);setTimeout(()=>{if(coldStage>=2)setStatus(COLD_STATUS[Math.min(coldStage,4)],true);else setStatus('online',false);},950);}
 }
 function closeApp(){
   const app=document.getElementById('app');app.classList.remove('show');app.setAttribute('aria-hidden','true');
@@ -734,18 +770,15 @@ function setInstruction(){
   el.textContent=map[currentMode];
 }
 function photoChosen(input){if(input.files&&input.files.length){document.getElementById('pdT').textContent='1 image ready · '+input.files[0].name.slice(0,28);runSmell();}}
-function setStatus(t,d){document.getElementById('appStatus').textContent=t;document.getElementById('appDot').style.background=d?'#FF5C8A':'var(--vapor)';}
-function maybeDegrade(){setStatus(coldStage>=2?'degraded':(Math.random()<0.25?'high demand':'online'),coldStage>=2);}
 
-/* ---- progress profiles: each maps (p,target)->pct, for a more erratic bar ---- */
 const PROFILES=[
-  (p,t)=>(1-Math.pow(1-p,2.2))*t,                                                   // smooth
-  (p,t)=>{const a=.28,b=.5,lo=t*.42;if(p<a)return ez(p/a)*lo;if(p<b)return lo;return lo+ez((p-b)/(1-b))*(t-lo);}, // stall midway
-  (p,t)=>Math.min(t,Math.floor(((1-Math.pow(1-p,2))*t)/12)*12),                     // stutter / steps
-  (p,t)=>{if(p<.3)return (p/.3)*72;return 72+(1-Math.pow(1-(p-.3)/.7,3))*(t-72);},  // race then crawl
-  (p)=>{if(p<.5)return ez(p/.5)*99;return 99;},                                     // stuck at 99
-  (p,t)=>{if(p<.45)return (p/.45)*80;if(p<.65)return 80-((p-.45)/.2)*18;return 62+((p-.65)/.35)*(t-62);}, // up, dip, up
-  (p,t)=>{if(p<.4)return ez(p/.4)*t;return t;}                                       // fast then freeze
+  (p,t)=>(1-Math.pow(1-p,2.2))*t,
+  (p,t)=>{const a=.28,b=.5,lo=t*.42;if(p<a)return ez(p/a)*lo;if(p<b)return lo;return lo+ez((p-b)/(1-b))*(t-lo);},
+  (p,t)=>Math.min(t,Math.floor(((1-Math.pow(1-p,2))*t)/12)*12),
+  (p,t)=>{if(p<.3)return (p/.3)*72;return 72+(1-Math.pow(1-(p-.3)/.7,3))*(t-72);},
+  (p)=>{if(p<.5)return ez(p/.5)*99;return 99;},
+  (p,t)=>{if(p<.45)return (p/.45)*80;if(p<.65)return 80-((p-.45)/.2)*18;return 62+((p-.65)/.35)*(t-62);},
+  (p,t)=>{if(p<.4)return ez(p/.4)*t;return t;}
 ];
 
 function runSmell(){
@@ -756,7 +789,6 @@ function runSmell(){
   const btn=document.getElementById('smellBtn');if(btn){btn.disabled=true;btn.textContent='Smelling…';}
   const spinner=document.getElementById('spinner');spinner.classList.remove('hide');
   const spinText=document.getElementById('spinText'),spinPct=document.getElementById('spinPct'),spinBar=document.getElementById('spinBar');
-
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const prof=reduce?PROFILES[0]:pick(PROFILES);
   const dur=reduce?400:rint(1500,4800);
@@ -764,7 +796,6 @@ function runSmell(){
   const phraseEvery=rint(450,900);
   const start=performance.now();let lastPhrase=0;
   spinText.textContent=pick(SPIN_PHRASES);
-
   function frame(now){
     const p=Math.min((now-start)/dur,1);
     let pct=Math.max(0,Math.min(100,Math.round(prof(p,target))));
@@ -773,25 +804,24 @@ function runSmell(){
     if(p<1)requestAnimationFrame(frame);else finish();
   }
   requestAnimationFrame(frame);
-
   function finish(){
     spinner.classList.add('hide');stage.classList.remove('smelling');
     if(btn){btn.disabled=false;btn.textContent='Smell again';}
-    busy=false;render(draw());updateCount();maybeDegrade();
+    busy=false;
+    const card=draw();render(card);setStatusFor(card.cat);updateCount();
   }
 }
 
 function render(card){
   const out=document.getElementById('output');
   if(card.type==='meta'){out.innerHTML=`<div class="card meta"><div class="card-msg">${card.msg}</div></div>`;return;}
-  const ico=card.icon==='info'?'ico-info':'ico-warn';
-  const glyph=card.icon==='info'?'i':'!';
+  const sev=card.sev==='info'?'cat-info':'cat-warn';
   let actions;
   if(card.action==='upgrade')actions=`<div class="card-actions"><button class="card-btn solid" onclick="upgrade()">Upgrade to Connoisseur</button><button class="card-btn" onclick="runSmell()">Not now</button></div>`;
-  else if(card.action==='verify')actions=`<div class="card-actions"><button class="card-btn solid" onclick="runSmell()">Verify</button></div>`;
+  else if(card.action==='verify')actions=`<div class="card-actions"><button class="card-btn solid" onclick="runSmell()">I'm not a nose</button></div>`;
   else actions=`<div class="card-actions"><button class="card-btn solid" onclick="runSmell()">Try again</button></div>`;
-  out.innerHTML=`<div class="card">
-    <div class="card-head"><div class="card-ico ${ico}">${glyph}</div><div class="card-title">${card.title}</div></div>
+  out.innerHTML=`<div class="card ${sev}">
+    <div class="card-cat"><span class="cdot"></span><span class="clabel">${card.label}</span></div>
     <div class="card-msg">${card.msg}</div>
     ${card.detail?`<div class="card-detail">${card.detail}</div>`:''}
     ${actions}
